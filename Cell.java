@@ -3,14 +3,14 @@ import java.awt.Graphics;
 
 public class Cell {
 
-    private int x;
-    private int y;
+    private int row;
+    private int col;
     private int size;
     private boolean active;
 
-    public Cell(int x, int y, int size) {
-        this.x = x;
-        this.y = y;
+    public Cell(int row, int col, int size) {
+        this.row = row;
+        this.col = col;
         this.size = size;
         this.active = false;
     }
@@ -20,6 +20,8 @@ public class Cell {
     }
 
     public void draw(Graphics g) {
+        int x = col * size;
+        int y = row * size;
         g.setColor(active ? Color.GREEN : Color.GRAY);
         g.fillRect(x, y, size, size);
     }
