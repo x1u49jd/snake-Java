@@ -34,7 +34,7 @@ public class Panel extends JPanel {
 
         // draw all cells from the array
         for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < rows; c++) {
+            for (int c = 0; c < cols; c++) {
                 cells[r][c].draw(g);
             }
         }
