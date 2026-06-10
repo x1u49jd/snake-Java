@@ -13,17 +13,16 @@ public class InputHandler implements KeyListener {
     public void keyPressed(KeyEvent e) {
         int key =  e.getKeyCode();
 
-        if (key == KeyEvent.VK_UP) {
+        if (key == KeyEvent.VK_UP || key == KeyEvent.VK_W) {
             direction = "UP";
         }
-        else if (key == KeyEvent.VK_DOWN) {
+        else if (key == KeyEvent.VK_DOWN || key == KeyEvent.VK_S) {
             direction = "DOWN";
         }
-        else if (key == KeyEvent.VK_LEFT) {
+        else if (key == KeyEvent.VK_LEFT || key == KeyEvent.VK_A) {
             direction = "LEFT";
-
         }
-        else if (key == KeyEvent.VK_RIGHT) {
+        else if (key == KeyEvent.VK_RIGHT || key == KeyEvent.VK_D) {
             direction = "RIGHT";
         }
     }
