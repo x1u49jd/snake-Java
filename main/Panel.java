@@ -8,7 +8,7 @@ import entities.Snake;
 public class Panel extends JPanel {
     private final int rows = 20;
     private final int cols = 20;
-    private final int cellSize = 25;
+    private final int cellSize = 40;
     private Cell[][] cells;
 
     public Panel() {
