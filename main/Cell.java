@@ -23,7 +23,13 @@ public class Cell {
     public void draw(Graphics g) {
         int x = col * size;
         int y = row * size;
+
+        // draw active/unactive cells
         g.setColor(active ? Color.GREEN : Color.GRAY);
         g.fillRect(x, y, size, size);
+
+        // draw grid lines
+        g.setColor(Color.DARK_GRAY);
+        g.drawRect(x, y, size, size);
     }
 }
