@@ -9,7 +9,7 @@ public class Game {
     InputHandler inputHandler = new InputHandler();
     Snake snake = new Snake(5, 5);
 
-    public void gameLoop() {
+    private void gameLoop() {
         while(true) {
             snake.move(inputHandler.getDirection());
             panel.update(snake);
@@ -24,7 +24,7 @@ public class Game {
         }
     }
 
-    public Game() {
+    private void setupFrame() {
         frame.add(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
@@ -33,7 +33,10 @@ public class Game {
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.addKeyListener(inputHandler);
+    } 
 
+    public Game() {
+        setupFrame();
         new Thread(this::gameLoop).start();
     }
 }
