@@ -1,6 +1,7 @@
 package main;
 import javax.swing.JFrame;
 
+import entities.Food;
 import entities.Snake;
 
 public class Game {
@@ -8,11 +9,12 @@ public class Game {
     Panel panel = new Panel();
     InputHandler inputHandler = new InputHandler();
     Snake snake = new Snake(5, 5);
+    Food food = new Food(3, 8);
 
     private void gameLoop() {
         while(true) {
             snake.move(inputHandler.getDirection());
-            panel.update(snake);
+            panel.update(snake, food);
 
             // wait 120 ms between updates (roughly 8 fps)
             try {

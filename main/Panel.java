@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 
+import entities.Food;
 import entities.Snake;
 
 public class Panel extends JPanel {
@@ -36,7 +37,7 @@ public class Panel extends JPanel {
         }
     }
 
-    public void update(Snake snake) {
+    public void update(Snake snake, Food food) {
         // set all cells in the grid to false (gray)
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
@@ -52,6 +53,8 @@ public class Panel extends JPanel {
             int c = pos[1];
             cells[r][c].setActive(true);
         }
+
+        cells[food.getRow()][food.getCol()].setActive(true);
 
         repaint();
     }
