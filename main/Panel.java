@@ -38,23 +38,24 @@ public class Panel extends JPanel {
     }
 
     public void update(Snake snake, Food food) {
-        // set all cells in the grid to false (gray)
+        // set all cells in the grid to empty (GRAY)
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
-                cells[r][c].setActive(false);
+                cells[r][c].setType(CellType.EMPTY);
             }
         }
+        
+        // set the food cell to food cell type (ORANGE)
+        cells[food.getRow()][food.getCol()].setType(CellType.FOOD);
 
         // for every segment of the snake, 
-        // find the matching cell in the grid and mark it as true (green)
+        // find the matching cell in the grid and mark it as snake cell type (GREEN)
         for (int i = 0; i < snake.getBody().size(); i++) {
             int[] pos = snake.getBody().get(i);
             int r = pos[0];
             int c = pos[1];
-            cells[r][c].setActive(true);
+            cells[r][c].setType(CellType.SNAKE);
         }
-
-        cells[food.getRow()][food.getCol()].setActive(true);
 
         repaint();
     }
