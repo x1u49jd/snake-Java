@@ -60,4 +60,12 @@ public class Panel extends JPanel {
         repaint();
     }
 
+
+    public int getRows() {
+        return rows;
+    }
+
+    public int getCols() {
+        return cols;
+    }
 }

@@ -8,7 +8,7 @@ public class Game {
     JFrame frame = new JFrame();
     Panel panel = new Panel();
     InputHandler inputHandler = new InputHandler();
-    Snake snake = new Snake(5, 5);
+    Snake snake = new Snake(5, 5, panel.getRows(), panel.getCols());
     Food food = new Food(3, 8);
 
     private void gameLoop() {
