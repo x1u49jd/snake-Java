@@ -14,6 +14,7 @@ public class Game {
     private void gameLoop() {
         while(true) {
             snake.move(inputHandler.getDirection());
+            snake.eat(food);
             panel.update(snake, food);
 
             // wait 120 ms between updates (roughly 8 fps)

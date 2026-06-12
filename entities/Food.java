@@ -3,6 +3,7 @@ package entities;
 public class Food {
     int row;
     int col;
+    boolean exists = true;
 
     public Food(int row, int col) {
         this.row = row;
@@ -15,5 +16,13 @@ public class Food {
 
     public int getCol() {
         return col;
+    }
+
+    public boolean doesExist() {
+        return exists;
+    }
+
+    public void remove() {
+        exists = false;
     }
 }

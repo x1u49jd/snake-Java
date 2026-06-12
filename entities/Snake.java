@@ -65,4 +65,12 @@ public class Snake {
         // remove the tail to keep snake length the same
         body.removeLast();
     }
+
+    public void eat(Food food) {
+        int[] head = getHead();
+
+        if (head[0] == food.getRow() && head[1] == food.getCol() ) {
+            food.remove();
+        }
+    }
 }

@@ -45,8 +45,10 @@ public class Panel extends JPanel {
             }
         }
         
-        // set the food cell to food cell type (ORANGE)
-        cells[food.getRow()][food.getCol()].setType(CellType.FOOD);
+        if (food.doesExist() == true) {
+            // set the food cell to food cell type (ORANGE)
+            cells[food.getRow()][food.getCol()].setType(CellType.FOOD);
+        }
 
         // for every segment of the snake, 
         // find the matching cell in the grid and mark it as snake cell type (GREEN)
